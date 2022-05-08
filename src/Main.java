@@ -1,5 +1,5 @@
-import Util.LoginUtil;
-import Util.MenuUtil;
+import util.LoginUtil;
+import util.MenuUtil;
 
 public class Main {
 
