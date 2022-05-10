@@ -1,6 +1,6 @@
 package entity;
 
-import java.sql.Date;
+import java.time.LocalDate;
 import java.util.List;
 
 public class User {
@@ -8,7 +8,7 @@ public class User {
     private String name;
     private String surName;
     private String fatName;
-    private Date birthDate;
+    private LocalDate birthDate;
     private Integer idNumber;
     private String finCode;
     private String city;
@@ -17,10 +17,14 @@ public class User {
     private String email;
     private List<UserBankAccount> userBankAccountList;
 
-    public User(){}
+    public User() {
+    }
 
-    public User(int id, String name, String surName, String fatName, Date birthDate, Integer idNumber, String finCode, String city, String address, Integer phoneNumber, String email, List<UserBankAccount> userBankAccountList) {
+    public User(int id) {
         this.id = id;
+    }
+
+    public User(String name, String surName, String fatName, LocalDate birthDate, Integer idNumber, String finCode, String city, String address, Integer phoneNumber, String email) {
         this.name = name;
         this.surName = surName;
         this.fatName = fatName;
@@ -31,15 +35,6 @@ public class User {
         this.address = address;
         this.phoneNumber = phoneNumber;
         this.email = email;
-        this.userBankAccountList = userBankAccountList;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
     }
 
     public String getName() {
@@ -66,11 +61,11 @@ public class User {
         this.fatName = fatName;
     }
 
-    public Date getBirthDate() {
+    public LocalDate getBirthDate() {
         return birthDate;
     }
 
-    public void setBirthDate(Date birthDate) {
+    public void setBirthDate(LocalDate birthDate) {
         this.birthDate = birthDate;
     }
 
@@ -120,14 +115,6 @@ public class User {
 
     public void setEmail(String email) {
         this.email = email;
-    }
-
-    public List<UserBankAccount> getUserBankAccountList() {
-        return userBankAccountList;
-    }
-
-    public void setUserBankAccountList(List<UserBankAccount> userBankAccountList) {
-        this.userBankAccountList = userBankAccountList;
     }
 
     @Override

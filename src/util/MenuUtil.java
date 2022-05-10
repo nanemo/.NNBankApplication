@@ -1,6 +1,11 @@
 package util;
 
+import entity.User;
 import menulist.Menu;
+import services.UserService;
+import services.impl.UserServiceImpl;
+
+import java.time.LocalDate;
 import java.util.Scanner;
 import static java.lang.System.*;
 
@@ -16,7 +21,12 @@ public class MenuUtil {
             int chooseFunction = scanner.nextInt();
             switch (chooseFunction) {
                 case 1:
-                    out.println();
+                    UserService userService = new UserServiceImpl();
+
+                    User user = new User("Nadir", "Nadirli", "Safarali", LocalDate.of(1991,04,04),
+                            6522736, "50ZUKUT", "Baku", "Hesen Eliyev107a",
+                            553058922, "companynadirnadirli@gmail.com");
+                    userService.addUser(user);
                     break;
                 case 2:
                     out.println();

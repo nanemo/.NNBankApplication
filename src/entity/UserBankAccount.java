@@ -9,7 +9,7 @@ public class UserBankAccount implements Serializable {
     private String currency;
     private Integer balance;
 
-    public UserBankAccount() {}
+    private UserBankAccount() {}
 
     public UserBankAccount(int bankAccount, String accountPassword, String iban, String currency, Integer balance) {
         this.bankAccount = bankAccount;
