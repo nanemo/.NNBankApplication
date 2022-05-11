@@ -9,12 +9,15 @@ public class User {
     private String surName;
     private String fatName;
     private LocalDate birthDate;
-    private Integer idNumber;
-    private String finCode;
     private String city;
     private String address;
-    private Integer phoneNumber;
+    private String idSeria;
+    private Integer idNumber;
+    private String finCode;
+    private String phoneNumber;
     private String email;
+    private UserBankAccount bankAccountInfo;
+
     private List<UserBankAccount> userBankAccountList;
 
     public User() {
@@ -24,17 +27,49 @@ public class User {
         this.id = id;
     }
 
-    public User(String name, String surName, String fatName, LocalDate birthDate, Integer idNumber, String finCode, String city, String address, Integer phoneNumber, String email) {
+    public User(String name, String surName, String fatName, String finCode, UserBankAccount bankAccountInfo) {
+        this.name = name;
+        this.surName = surName;
+        this.fatName = fatName;
+        this.finCode = finCode;
+        this.bankAccountInfo = bankAccountInfo;
+    }
+
+    public User(String name, String surName, String fatName, LocalDate birthDate, String city, String address, String idSeria, Integer idNumber, String finCode, String phoneNumber, String email) {
         this.name = name;
         this.surName = surName;
         this.fatName = fatName;
         this.birthDate = birthDate;
-        this.idNumber = idNumber;
-        this.finCode = finCode;
         this.city = city;
         this.address = address;
+        this.idSeria = idSeria;
+        this.idNumber = idNumber;
+        this.finCode = finCode;
         this.phoneNumber = phoneNumber;
         this.email = email;
+    }
+
+    public User(int id, String name, String surName, String fatName, LocalDate birthDate, String city, String address, String idSeria, Integer idNumber, String finCode, String phoneNumber, String email) {
+        this.id = id;
+        this.name = name;
+        this.surName = surName;
+        this.fatName = fatName;
+        this.birthDate = birthDate;
+        this.city = city;
+        this.address = address;
+        this.idSeria = idSeria;
+        this.idNumber = idNumber;
+        this.finCode = finCode;
+        this.phoneNumber = phoneNumber;
+        this.email = email;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getName() {
@@ -69,22 +104,6 @@ public class User {
         this.birthDate = birthDate;
     }
 
-    public Integer getIdNumber() {
-        return idNumber;
-    }
-
-    public void setIdNumber(Integer idNumber) {
-        this.idNumber = idNumber;
-    }
-
-    public String getFinCode() {
-        return finCode;
-    }
-
-    public void setFinCode(String finCode) {
-        this.finCode = finCode;
-    }
-
     public String getCity() {
         return city;
     }
@@ -101,11 +120,35 @@ public class User {
         this.address = address;
     }
 
-    public Integer getPhoneNumber() {
+    public String getIdSeria() {
+        return idSeria;
+    }
+
+    public void setIdSeria(String idSeria) {
+        this.idSeria = idSeria;
+    }
+
+    public Integer getIdNumber() {
+        return idNumber;
+    }
+
+    public void setIdNumber(Integer idNumber) {
+        this.idNumber = idNumber;
+    }
+
+    public String getFinCode() {
+        return finCode;
+    }
+
+    public void setFinCode(String finCode) {
+        this.finCode = finCode;
+    }
+
+    public String getPhoneNumber() {
         return phoneNumber;
     }
 
-    public void setPhoneNumber(Integer phoneNumber) {
+    public void setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
     }
 
@@ -117,6 +160,22 @@ public class User {
         this.email = email;
     }
 
+    public List<UserBankAccount> getUserBankAccountList() {
+        return userBankAccountList;
+    }
+
+    public void setUserBankAccountList(List<UserBankAccount> userBankAccountList) {
+        this.userBankAccountList = userBankAccountList;
+    }
+
+    public UserBankAccount getBankAccountInfo() {
+        return bankAccountInfo;
+    }
+
+    public void setBankAccountInfo(UserBankAccount bankAccountInfo) {
+        this.bankAccountInfo = bankAccountInfo;
+    }
+
     @Override
     public String toString() {
         return "User{" +
@@ -125,13 +184,24 @@ public class User {
                 ", surName='" + surName + '\'' +
                 ", fatName='" + fatName + '\'' +
                 ", birthDate=" + birthDate +
-                ", idNumber=" + idNumber +
-                ", finCode='" + finCode + '\'' +
                 ", city='" + city + '\'' +
                 ", address='" + address + '\'' +
+                ", idSeria='" + idSeria + '\'' +
+                ", idNumber=" + idNumber +
+                ", finCode='" + finCode + '\'' +
                 ", phoneNumber=" + phoneNumber +
                 ", email='" + email + '\'' +
                 ", userBankAccountList=" + userBankAccountList +
+                '}';
+    }
+
+    public String toStringForFinCodeSearching() {
+        return "User{" +
+                "name='" + name + '\'' +
+                ", surName='" + surName + '\'' +
+                ", fatName='" + fatName + '\'' +
+                ", finCode='" + finCode + '\'' +
+                ", bankAccountInfo=" + bankAccountInfo.toString() +
                 '}';
     }
 }

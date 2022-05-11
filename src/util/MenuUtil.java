@@ -23,12 +23,14 @@ public class MenuUtil {
                 case 1:
                     UserService userService = new UserServiceImpl();
 
-                    User user = new User("Nadir", "Nadirli", "Safarali", LocalDate.of(1991,04,04),
-                            6522736, "50ZUKUT", "Baku", "Hesen Eliyev107a",
-                            553058922, "companynadirnadirli@gmail.com");
+                    User user = new User("Laçın", "Hüseynov", "İlqar", LocalDate.of(1991,12,23),
+                            "Biləsuvar", "Şəhər Mərkəzi", "AA", 5511664, "50ZUKUT",
+                            "+994709948586", "lachin.huseynov@gmail.com");
                     userService.addUser(user);
                     break;
                 case 2:
+                    UserService userService2 = new UserServiceImpl();
+                    userService2.getByIdIdentification("50ZUKUT");
                     out.println();
                     break;
                 case 3:
