@@ -8,7 +8,6 @@ import services.UserService;
 import java.sql.*;
 import java.time.LocalDate;
 import java.time.ZoneId;
-import java.util.HashMap;
 import java.util.List;
 
 public class UserServiceImpl extends ConnectionService implements UserService {
@@ -19,7 +18,6 @@ public class UserServiceImpl extends ConnectionService implements UserService {
         String surname = rs.getString("surname");
         String fatherName = rs.getString("father_name");
         LocalDate birthDate = rs.getDate("birth_date").toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
-        ;
         String city = rs.getString("city");
         String address = rs.getString("address");
         String idSeria = rs.getString("id_seria");
@@ -31,7 +29,7 @@ public class UserServiceImpl extends ConnectionService implements UserService {
         return new User(id, name, surname, fatherName, birthDate, city, address, idSeria, idNumber, finCode, phoneNumber, email);
     }
 
-    private User getUserForIdentification(ResultSet rs) throws Exception {
+    private User getUserForFinCode(ResultSet rs) throws Exception {
         String name = rs.getString("name");
         String surname = rs.getString("surname");
         String fatherName = rs.getString("father_name");
@@ -46,7 +44,7 @@ public class UserServiceImpl extends ConnectionService implements UserService {
     }
 
     @Override
-    public User getByIdIdentification(String finCode) {
+    public User getByFinCode(String finCode) {
         User result = null;
         List<User> resultAsList = null;
         try (Connection c = connect()) {
@@ -58,7 +56,7 @@ public class UserServiceImpl extends ConnectionService implements UserService {
             ResultSet rs = stmt.getResultSet();
 
             while (rs.next()) {
-                result = (getUserForIdentification(rs));
+                result = (getUserForFinCode(rs));
                 System.out.println(result.toStringForFinCodeSearching());
             }
 

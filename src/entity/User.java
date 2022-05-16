@@ -196,6 +196,8 @@ public class User {
     }
 
     public String toStringForFinCodeSearching() {
+
+
         return "User{" +
                 "name='" + name + '\'' +
                 ", surName='" + surName + '\'' +

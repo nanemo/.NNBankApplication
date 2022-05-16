@@ -7,11 +7,13 @@ import services.impl.UserServiceImpl;
 
 import java.time.LocalDate;
 import java.util.Scanner;
+
 import static java.lang.System.*;
 
 public class MenuUtil {
 
-    private MenuUtil(){}
+    private MenuUtil() {
+    }
 
     public static void showMenu() {
         Scanner scanner = new Scanner(in);
@@ -23,14 +25,14 @@ public class MenuUtil {
                 case 1:
                     UserService userService = new UserServiceImpl();
 
-                    User user = new User("Laçın", "Hüseynov", "İlqar", LocalDate.of(1991,12,23),
+                    User user = new User("Laçın", "Hüseynov", "İlqar", LocalDate.of(1991, 12, 23),
                             "Biləsuvar", "Şəhər Mərkəzi", "AA", 5511664, "50ZUKUT",
                             "+994709948586", "lachin.huseynov@gmail.com");
                     userService.addUser(user);
                     break;
                 case 2:
                     UserService userService2 = new UserServiceImpl();
-                    userService2.getByIdIdentification("50ZUKUT");
+                    userService2.getByFinCode("50ZUKUT");
                     out.println();
                     break;
                 case 3:

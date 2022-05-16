@@ -7,7 +7,7 @@ import java.util.List;
 
 public interface UserService {
 
-    User getByIdIdentification(String finCode);
+    User getByFinCode(String finCode);
 
     boolean addUser(User u);
 

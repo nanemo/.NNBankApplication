@@ -2,7 +2,8 @@ package menulist;
 
 public class Menu {
 
-    private Menu(){}
+    private Menu() {
+    }
 
     private static String menuList = "1. Add customer" +
             "\n2. Create bank account for customer" +

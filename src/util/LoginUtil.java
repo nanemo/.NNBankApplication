@@ -2,6 +2,7 @@ package util;
 
 import java.io.Serializable;
 import java.util.Scanner;
+
 import static java.lang.System.*;
 
 public class LoginUtil implements Serializable {
@@ -10,7 +11,7 @@ public class LoginUtil implements Serializable {
     private int i = 0;
     private static LoginUtil loginUtil = null;
 
-    private LoginUtil(){
+    private LoginUtil() {
     }
 
     public void signIn() {
@@ -38,10 +39,10 @@ public class LoginUtil implements Serializable {
         }
     }
 
-    public static LoginUtil getLoginObject(){
-        if (loginUtil == null){
+    public static LoginUtil getLoginObject() {
+        if (loginUtil == null) {
             loginUtil = new LoginUtil();
         }
-            return loginUtil;
+        return loginUtil;
     }
 }
