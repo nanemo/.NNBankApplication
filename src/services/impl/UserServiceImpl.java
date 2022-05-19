@@ -89,15 +89,4 @@ public class UserServiceImpl extends ConnectionService implements UserService {
             return false;
         }
     }
-
-    @Override
-    public boolean remove(String idIndex) {
-        return false;
-    }
-
-    @Override
-    public boolean update(User u) {
-
-        return false;
-    }
 }

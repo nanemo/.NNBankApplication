@@ -64,6 +64,10 @@ public class User {
         this.email = email;
     }
 
+    public User(String finCode) {
+        this.finCode = finCode;
+    }
+
     public int getId() {
         return id;
     }

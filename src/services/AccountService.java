@@ -1,12 +1,13 @@
 package services;
 
+import entity.User;
 import entity.UserBankAccount;
 
 public interface AccountService {
 
     UserBankAccount searchByAccountNumber(long accountNumber);
 
-    boolean addBankAccount(UserBankAccount userBankAccount);
+    boolean addBankAccount(UserBankAccount userBankAccount, User user);
 
-    boolean removeBankAccount(long accountNumber);
+    boolean deactivateBankAccount(long accountNumber);
 }

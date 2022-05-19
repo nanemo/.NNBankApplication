@@ -13,5 +13,4 @@ abstract class ControlImplementations {
         return new UserServiceImpl();
     }
 
-    abstract void asdsd();
 }
