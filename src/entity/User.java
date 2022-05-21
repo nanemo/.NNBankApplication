@@ -68,6 +68,13 @@ public class User {
         this.finCode = finCode;
     }
 
+    public User(String name, String surName, String fatName, String finCode) {
+        this.name = name;
+        this.surName = surName;
+        this.fatName = fatName;
+        this.finCode = finCode;
+    }
+
     public int getId() {
         return id;
     }
@@ -200,8 +207,6 @@ public class User {
     }
 
     public String toStringForFinCodeSearching() {
-
-
         return "User{" +
                 "name='" + name + '\'' +
                 ", surName='" + surName + '\'' +

@@ -30,6 +30,14 @@ public class UserBankAccount implements Serializable {
         this.balance = balance;
     }
 
+    public UserBankAccount(long bankAccount, String accountPassword, String iban, String currency, String bankAccountStatus) {
+        this.bankAccount = bankAccount;
+        this.accountPassword = accountPassword;
+        this.iban = iban;
+        this.currency = currency;
+        this.bankAccountStatus = bankAccountStatus;
+    }
+
     public int getId() {
         return id;
     }

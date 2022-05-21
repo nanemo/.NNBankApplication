@@ -10,4 +10,5 @@ public interface AccountService {
     boolean addBankAccount(UserBankAccount userBankAccount, User user);
 
     boolean deactivateBankAccount(long accountNumber);
+
 }

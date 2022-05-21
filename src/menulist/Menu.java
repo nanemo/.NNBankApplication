@@ -1,5 +1,7 @@
 package menulist;
 
+import entity.UserBankAccount;
+
 public class Menu {
 
     private Menu() {

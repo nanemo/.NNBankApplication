@@ -4,7 +4,6 @@ import entity.User;
 import entity.UserBankAccount;
 import mysqlservice.ConnectionService;
 import services.UserService;
-
 import java.sql.*;
 import java.time.LocalDate;
 import java.time.ZoneId;
@@ -29,12 +28,21 @@ public class UserServiceImpl extends ConnectionService implements UserService {
         return new User(id, name, surname, fatherName, birthDate, city, address, idSeria, idNumber, finCode, phoneNumber, email);
     }
 
-    private User getUserForFinCode(ResultSet rs) throws Exception {
+    public User checkUserFinCodeIsExist(ResultSet rs) throws Exception{
         String name = rs.getString("name");
         String surname = rs.getString("surname");
         String fatherName = rs.getString("father_name");
         String finCode = rs.getString("fin_code");
-        long bankaccount = rs.getLong("bankaccount");
+
+        return new User(name, surname, fatherName, finCode);
+    }
+
+    public User getUserForFinCode(ResultSet rs) throws Exception {
+        String name = rs.getString("name");
+        String surname = rs.getString("surname");
+        String fatherName = rs.getString("father_name");
+        String finCode = rs.getString("fin_code");
+        long bankaccount = rs.getLong("bank_account");
         String currency = rs.getString("currency");
         double balance = rs.getDouble("balance");
 

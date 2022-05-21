@@ -1,8 +1,11 @@
 package util;
 
 import entity.User;
+import entity.UserBankAccount;
 import menulist.Menu;
+import services.AccountService;
 import services.UserService;
+import services.impl.AccountServiceImpl;
 import services.impl.UserServiceImpl;
 
 import java.time.LocalDate;
@@ -31,8 +34,8 @@ public class MenuUtil {
                     userService.addUser(user);
                     break;
                 case 2:
-                    UserService userService2 = new UserServiceImpl();
-                    userService2.getByFinCode("50ZUKUT");
+                    AccountService accountService = new AccountServiceImpl();
+                    accountService.addBankAccount(new UserBankAccount(6456564664948484L, "2142", "AZ883729938432", "AZN", "active"), new User("TY748U2"));
                     out.println();
                     break;
                 case 3:
