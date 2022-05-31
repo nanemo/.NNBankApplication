@@ -19,6 +19,7 @@ public class MenuUtil {
     }
 
     public static void showMenu() {
+
         Scanner scanner = new Scanner(in);
         while (true) {
             out.println("Choose the operation \n");
